@@ -196,30 +196,52 @@ textarea.form__input {
  * For these challenges do not change any of the code above this point.
  * However, you can reference them for learning purposes.
  */
- .header {
-   display:flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
- }
-
-.nav {
-  width: 100%;
-  text-align: center;
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav__item {
-  display: inline;
+.nav {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+
+@media (min-width: 640px) {
+  .nav {
+    justify-content: flex-end;
+  }
+}
+
+textarea.form__input {
+  flex:1;
 }
 
 .form {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
 }
-
-.form__selection {
-  width:100%;
+.form__section {
+  flex: 1 1 525px;
 }
+
+.form__section--two {
+  display:flex;
+  flex-direction: column;
+  flex-grow: 3;
+}
+
+.form__section--two .form__field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+
 
 /* Radio Button Styles */
 
@@ -255,26 +277,16 @@ textarea.form__input {
   justify-content: space-between;
 }
 
-@media(min-width:640px) {
-  .nav {
-    text-align: right;
-    width: calc(100% - 130px - 124px - 64px);
-  }
+.form__scale-input:checked ~ .form__scale-value {
+  background-color: #55daa2;
 }
 
-@media(min-width: 1024px) {
+.form__scale-input:invalid ~ .form__scale-value,
+.form__input:invalid {
+  border: 1px solid #ee4949;
+}
 
-  .nav{
-    width: calc(100% - 130px -330px - 124px -64px);
-  }
-
-  .form__section--one{
-    width: 525px;
-  }
-
-  .form__section--two{
-    width: calc(100% - 525px);
-  }
-
-
+.form__scale-input {
+  position: absolute;
+  left: -9999px;
 }
