@@ -196,7 +196,8 @@ textarea.form__input {
  * For these challenges do not change any of the code above this point.
  * However, you can reference them for learning purposes.
  */
-header {
+
+.header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -209,39 +210,42 @@ header {
   justify-content: center;
 }
 
-
 @media (min-width: 640px) {
   .nav {
     justify-content: flex-end;
   }
 }
 
+.form__info > :first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 textarea.form__input {
-  flex:1;
+  flex: 1;
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
 }
+
 .form__section {
   flex: 1 1 525px;
 }
 
 .form__section--two {
-  display:flex;
+  display: flex;
   flex-direction: column;
   flex-grow: 3;
 }
 
 .form__section--two .form__field {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
-
-
-
 
 /* Radio Button Styles */
 
@@ -276,6 +280,19 @@ textarea.form__input {
   align-items: center;
   justify-content: space-between;
 }
+
+.form__scale-value {
+  padding: 14px;
+  font-size: 14px;
+  border: 1px solid #f5f5f5;
+  margin: 0 1px;
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
 
 .form__scale-input:checked ~ .form__scale-value {
   background-color: #55daa2;
